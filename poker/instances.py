@@ -34,6 +34,16 @@ class Player(Participants):
         self.storage_limit = 2
         self.name = name
         self.combination = ()
+        self.in_game = True
+
+    def keep_playing(self):
+        inp = input('{}, keep playing? (y/n)\n'.format(self.name)).lower()
+        while inp not in ['y', 'n']:
+            inp = input('Wrong input! \n{}, keep playing? (y/n)\n'.format(self.name)).lower()
+        if inp == 'y':
+            pass
+        elif inp == 'n':
+            self.in_game = False
 
 
 class Card(object):
@@ -70,30 +80,4 @@ class Deck(object):
             res += [self.cards.pop(0)]
             q = q - 1
         return res
-
-
-def combination_checker(player, desk):
-
-    cards = []
-    suits = []
-    for card in player.storage + desk.storage:
-        cards += card.value
-        suits += card.suit
-
-    for suit in Deck().suits:
-        for card_suit in suits:
-            if card_suit == suit:
-                suits += card.sut
-            if len(suits) > 5:
-                for val in list(range(8, 13)):
-                    if val not in cards:
-
-                    player.combination = 11, 'Royal Flush'
-                elif
-
-
-
-
-
-
 
