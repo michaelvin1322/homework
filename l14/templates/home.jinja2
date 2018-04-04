@@ -1,0 +1,13 @@
+Main page
+
+Posts
+---------
+{% for post in posts %}
+Title: {{ post.title }}    
+
+{{ post.content }}
+
+Created at {{post.date_created}}   by {{ post.user_name }}
+
+---------
+{% endfor %}

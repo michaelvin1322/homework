@@ -1,0 +1,15 @@
+Post page. Title: {{ post.title }}
+
+{{ post.content }}
+
+Created at {{post.date_created}}   by {{ post.user_name }}
+
+Comments:
+---------
+{% for comment in comments %}
+{{ comment.content }}
+
+Created at {{comment.date_created}}   by {{ comment.user_name }}
+---------
+{% endfor %}
+
